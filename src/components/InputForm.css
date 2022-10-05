@@ -94,6 +94,7 @@ input::-webkit-inner-spin-button {
     top: -4px;
 }
 
+
 @media (max-width: 768px) {
     .input-form__input {
         font-size: 22px;

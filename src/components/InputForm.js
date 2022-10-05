@@ -1,9 +1,11 @@
 import React from 'react';
 import './InputForm.css';
+import Slider from '@mui/material/Slider';
 
 export default function InputForm({ title, value, typeValue, min, max, name, handleChange, carCost }) {
 
     const initialPayment = carCost / 100 * value
+    const windowWidth = window.innerWidth
 
     return (
         <div className='input-form'>
@@ -49,6 +51,26 @@ export default function InputForm({ title, value, typeValue, min, max, name, han
                             </div>
                         </>
                 }
+                <Slider
+
+                    size='small'
+                    min={min}
+                    max={max}
+                    name={name}
+                    value={value}
+                    aria-label='small'
+                    valueLabelDisplay='off'
+                    onChange={(e) => handleChange(e)}
+                    sx={{
+                        position: 'absolute',
+                        marginTop: '54px',
+                        marginRight: 'auto',
+                        alignSelf: 'center',
+                        width: '90%',
+                        color: '#FF9514',
+
+                    }}
+                />
             </div>
         </div>
     )
