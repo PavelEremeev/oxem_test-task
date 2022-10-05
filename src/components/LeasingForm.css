@@ -66,6 +66,15 @@
     margin-left: 15px;
 }
 
+.leasing-form__button_disabled {
+    background-color: rgba(255, 149, 20, 0.4);
+}
+
+.leasing-form__button.leasing-form__button_disabled:hover {
+    background-color: rgba(255, 149, 20, 0.4);
+    cursor: auto;
+}
+
 .leasing-form__button:hover {
     background-color: #000000;
     cursor: pointer;

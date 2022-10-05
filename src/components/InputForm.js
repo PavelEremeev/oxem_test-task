@@ -5,7 +5,6 @@ import Slider from '@mui/material/Slider';
 export default function InputForm({ title, value, typeValue, min, max, name, handleChange, carCost }) {
 
     const initialPayment = carCost / 100 * value
-    const windowWidth = window.innerWidth
 
     return (
         <div className='input-form'>
@@ -30,7 +29,7 @@ export default function InputForm({ title, value, typeValue, min, max, name, han
                                 className='input-form__input'
                                 type='number'
                                 name={name}
-                                value={Math.ceil(initialPayment.toString())}
+                                value={Math.ceil(initialPayment)}
                                 min={min}
                                 max={max}
                                 disabled
@@ -52,15 +51,14 @@ export default function InputForm({ title, value, typeValue, min, max, name, han
                         </>
                 }
                 <Slider
-
                     size='small'
                     min={min}
                     max={max}
                     name={name}
                     value={value}
-                    aria-label='small'
-                    valueLabelDisplay='off'
-                    onChange={(e) => handleChange(e)}
+                    aria-label='large'
+                    valueLabelDisplay="off"
+                    onChange={(evt) => handleChange(evt)}
                     sx={{
                         position: 'absolute',
                         marginTop: '54px',

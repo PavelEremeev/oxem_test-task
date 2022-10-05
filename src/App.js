@@ -1,7 +1,6 @@
 import './App.css';
 
 import React, { useState } from 'react';
-import InputForm from './components/InputForm';
 import LeasingForm from './components/LeasingForm';
 
 function App() {
@@ -15,9 +14,10 @@ function App() {
   )
 
   const handleChange = (evt) => {
+    let numb = Number(evt.target.value)
     setData(prevData => {
       return {
-        ...prevData, [evt.target.name]: evt.target.value
+        ...prevData, [evt.target.name]: numb
       }
     })
   }
@@ -53,7 +53,7 @@ function App() {
     (data.initialPayment >= 10 && data.initialPayment <= 60) &&
     (data.leasingLimit >= 1 && data.leasingLimit <= 60)
 
-
+  console.log(data)
   return (
     <div className="App">
       <LeasingForm
@@ -62,6 +62,7 @@ function App() {
         data={data}
         totalLeasingSum={totalLeasingSum}
         monthlyPay={monthlyPay}
+        checked={checkForm}
       />
     </div>
   );

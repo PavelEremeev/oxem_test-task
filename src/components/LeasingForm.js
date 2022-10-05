@@ -3,7 +3,7 @@ import InputForm from './InputForm'
 
 import './LeasingForm.css'
 
-export default function LeasingForm({ handleSubmit, handleChange, data, totalLeasingSum, monthlyPay }) {
+export default function LeasingForm({ handleSubmit, handleChange, data, totalLeasingSum, monthlyPay, checked }) {
 
 
 
@@ -51,7 +51,8 @@ export default function LeasingForm({ handleSubmit, handleChange, data, totalLea
                     <p className='leasing-form__text'>Ежемесячный платеж от</p>
                     <p className='leasing-form__value'>{monthlyPay.toLocaleString()} &#8381;</p>
                 </div>
-                <button className='leasing-form__button'>Оставить заявку</button>
+                {checked ? <button className='leasing-form__button'>Оставить заявку</button> :
+                    <button disabled className='leasing-form__button leasing-form__button_disabled'>Неверные данные</button>}
             </div>
         </form>
 
