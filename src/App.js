@@ -1,7 +1,8 @@
-
 import './App.css';
+
 import React, { useState } from 'react';
 import InputForm from './components/InputForm';
+import LeasingForm from './components/LeasingForm';
 
 function App() {
 
@@ -44,39 +45,11 @@ function App() {
 
   return (
     <div className="App">
-      <form className='leasing-form' onSubmit={handleSubmit}>
-        <h1 className='leasing-form__title'>
-          Рассчитайте стоимость автомобиля в лизинг
-        </h1>
-        <InputForm
-          title='Стоимость автомобиля'
-          name='carCost'
-          value={data.carCost}
-          initialValue='Руб.'
-          handleChange={handleChange}
-          min={1000000}
-          max={6000000}
-        />
-        <InputForm
-          title='Первоначальный взнос'
-          name='initialPayment'
-          value={data.initialPayment}
-          carCost={data.carCost}
-          initialValue='%'
-          handleChange={handleChange}
-          min={10}
-          max={60}
-        />
-        <InputForm
-          title='Срок лизинга'
-          name='leasingLimit'
-          value={data.leasingLimit}
-          initialValue='мес.'
-          handleChange={handleChange}
-          min={1}
-          max={60}
-        />
-      </form>
+      <LeasingForm
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        data={data}
+      />
     </div>
   );
 }

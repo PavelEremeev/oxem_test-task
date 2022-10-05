@@ -1,0 +1,22 @@
+.leasing-form {}
+
+.leasing-form__title {
+    font-family: 'Nekst';
+    font-weight: bold;
+    max-width: 760px;
+    font-size: 54px;
+}
+
+.leasing-form__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 45px;
+}
+
+@media (max-width: 1024px) {
+    .leasing-form__wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
