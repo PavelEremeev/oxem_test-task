@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
+import './InputForm.css';
 
-export default function InputForm({ title, value, initialValue, min, max, name, handleChange, carCost }) {
+export default function InputForm({ title, value, typeValue, min, max, name, handleChange, carCost }) {
 
     const initialPayment = carCost / 100 * value
 
@@ -9,7 +10,7 @@ export default function InputForm({ title, value, initialValue, min, max, name, 
             <h2 className='input-form__title'>{title}</h2>
             <div className='input-form__wrapper'>
                 {
-                    initialValue != '%' ?
+                    typeValue != '%' ?
                         <>
                             <input
                                 className='input-form__input'
@@ -20,19 +21,32 @@ export default function InputForm({ title, value, initialValue, min, max, name, 
                                 max={max}
                                 onChange={(evt) => handleChange(evt)}
                             />
-                            <p className='input-form__text'>{initialValue}</p>
+                            <p className='input-form__text'>{typeValue}</p>
                         </> :
                         <>
-                            <p className='input-form__initial-payment'>{initialPayment.toString()}</p>
                             <input
-                                className='input-form__initial-payment-input'
+                                className='input-form__input'
                                 type='number'
-                                value={value}
+                                name={name}
+                                value={Math.ceil(initialPayment.toString())}
                                 min={min}
                                 max={max}
-                                name={name}
+                                disabled
                                 onChange={(evt) => handleChange(evt)}
-                            />%
+                            />
+                            <div className='input-form__initial-payment'>
+                                <input
+                                    className='input-form__initial-payment-input'
+                                    type='number'
+                                    value={value}
+                                    min={min}
+                                    max={max}
+                                    maxLength='2'
+                                    name={name}
+                                    onChange={(evt) => handleChange(evt)}
+                                />
+                                <p className='input-form__text-procent'>%</p>
+                            </div>
                         </>
                 }
             </div>
