@@ -22,8 +22,19 @@ function App() {
     })
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = (evt) => {
+    evt.preventDefault()
 
+
+    setTimeout(() => {
+      fetch("https://eoj3r7f3r4ef6v4.m.pipedream.net/", {
+        ...data,
+        monthlyPay,
+        totalLeasingSum
+      }).then((res) => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
+    }, 3000)
   }
 
 
