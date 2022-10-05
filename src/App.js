@@ -49,6 +49,8 @@ function App() {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         data={data}
+        totalLeasingSum={totalLeasingSum}
+        monthlyPay={monthlyPay}
       />
     </div>
   );

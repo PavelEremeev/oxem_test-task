@@ -94,10 +94,14 @@ input::-webkit-inner-spin-button {
     top: -4px;
 }
 
-/* @media (min-width: 1024px) {
-    .input-form__wrapper {
-        width: 30%;
+@media (max-width: 768px) {
+    .input-form__input {
+        font-size: 22px;
+    }
+
+    .input-form__text {
+        font-size: 22px;
 
     }
 
-} */
+}

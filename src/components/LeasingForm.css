@@ -5,18 +5,119 @@
     font-weight: bold;
     max-width: 760px;
     font-size: 54px;
+    color: #333333;
 }
 
-.leasing-form__wrapper {
+.leasing-form__wrapper-input {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 45px;
 }
 
-@media (max-width: 1024px) {
+.leasing-form__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+}
+
+.leasing-form__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.leasing-form__text {
+    font-family: 'Gilroy';
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #333333;
+}
+
+.leasing-form__value {
+    font-size: 54px;
+    font-family: 'Nekst';
+    font-weight: bold;
+    line-height: 90%;
+    margin: 0;
+    color: #333333;
+}
+
+
+
+/* 
+.leasing-form__container:last-of-type {
+    margin-left: 15px;
+} */
+
+.leasing-form__button {
+    width: 100%;
+    height: 68px;
+    outline: none;
+    border: none;
+    border-radius: 40px;
+    background-color: #FF9514;
+    color: #ffffff;
+    font-family: 'Nekst';
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.leasing-form__button:hover {
+    background-color: #000000;
+    cursor: pointer;
+}
+
+.leasing-form__button:active {
+    background-color: #575757;
+}
+
+@media (max-width: 1440px) {
     .leasing-form__wrapper {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 200px;
+        row-gap: 44px;
+    }
+
+    .leasing-form__button {
+        margin-left: 0;
+        min-width: 320px;
+        width: 345px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .leasing-form__wrapper-input {
         display: grid;
         grid-template-columns: 1fr;
         gap: 32px;
+    }
+
+    .leasing-form__wrapper {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 40px;
+        row-gap: 33px;
+    }
+
+
+}
+
+@media (max-width: 768px) {
+    .leasing-form__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .leasing-form__button {
+        align-self: center;
+        font-size: 22px;
+    }
+
+    .leasing-form__value {
+        font-size: 22px;
+
     }
 }
