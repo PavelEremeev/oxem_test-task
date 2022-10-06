@@ -123,6 +123,9 @@
     .leasing-form__button {
         align-self: center;
         font-size: 22px;
+        width: 280px;
+        padding: 0;
+        min-width: 280px;
     }
 
     .leasing-form__value {
@@ -133,4 +136,6 @@
     .leasing-form__title {
         font-size: 34px;
     }
+
+
 }
